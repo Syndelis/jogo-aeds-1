@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "type": "shell",
+      "label": "C/C++: Compilar projeto",
+      "command": "/usr/bin/make",
+      "options": {
+        "cwd": "${workspaceFolder}",
+      },
+      "problemMatcher": ["$gcc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "detail": "Compila o Makefile do projeto"
+    }
+  ]
+}

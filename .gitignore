@@ -5,7 +5,5 @@
 jogo
 
 # VS Code files
-/.vscode/
-!/.vscode/launch.json
-!/.vscode/tasks.json
-!/.vscode/c_cpp_properties.json
+.vscode/*.log
+.vscode/settings.json
