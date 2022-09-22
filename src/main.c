@@ -1,18 +1,16 @@
 #include <jogo.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdarg.h>
 
 int main() {
 
     abre_janela(640, 480);
 
-    while (janela_aberta()) {
+    while (janela_esta_aberta()) {
 
-        glBegin(GL_QUADS);
-            glColor4f(1, 0, 0, 1);
-            glVertex2f(0, 0);
-            glVertex2f(0, 240);
-            glVertex2f(320, 240);
-            glVertex2f(320, 0);
-        glEnd();
+        cor(0xFFFF00);
+        desenha_retangulo(0, 0, 320, 240);
 
     }
 
