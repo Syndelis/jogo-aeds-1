@@ -8,10 +8,8 @@ int main() {
     abre_janela(640, 480);
 
     while (janela_esta_aberta()) {
-
-        cor(0xFFFF00);
+        cor(AMARELO);
         desenha_retangulo(0, 0, 320, 240);
-
     }
 
     fecha_janela();
