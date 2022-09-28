@@ -10,7 +10,7 @@ GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
 
 INCLUDE_DIRS=-I. -I$(JOGO_SRC)/include -I$(GLFW_SRC)/include
 LINK_DIRS=
-LINKS=-lGL -lm -ldl -pthread
+LINKS=-lGL -lGLEW -lm -ldl -pthread
 DEFINE=
 
 SRC_DIR=src

@@ -4,11 +4,14 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "${workspaceFolder}/lib/jogo/lib/glfw/include"
+                "${workspaceFolder}/lib/jogo/lib/glfw/include",
+                "${workspaceFolder}/lib/jogo/lib",
+                "${workspaceFolder}/lib/jogo/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
-            "intelliSenseMode": "linux-clang-x64"
+            "intelliSenseMode": "linux-clang-x64",
+            "configurationProvider": "ms-vscode.makefile-tools"
         }
     ],
     "version": 4

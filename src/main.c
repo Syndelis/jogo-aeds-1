@@ -10,6 +10,7 @@ int main() {
     while (janela_esta_aberta()) {
         cor(AMARELO);
         desenha_retangulo(0, 0, 320, 240);
+        desenha_imagem(320, 240, "assets/tux.png");
     }
 
     fecha_janela();
