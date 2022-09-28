@@ -12,6 +12,9 @@ int main() {
         desenha_retangulo(0, 0, 320, 240);
         desenha_imagem(mouse_x, mouse_y, "assets/tux.png");
 
+        fonte("assets/ubuntu.ttf", 32);
+        desenha_texto(20, 20, "Esse é um teste!");
+
         if (tecla_apertada(ESC))
             janela_deve_fechar();
 
