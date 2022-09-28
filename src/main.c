@@ -10,7 +10,11 @@ int main() {
     while (janela_esta_aberta()) {
         cor(AMARELO);
         desenha_retangulo(0, 0, 320, 240);
-        desenha_imagem(320, 240, "assets/tux.png");
+        desenha_imagem(mouse_x, mouse_y, "assets/tux.png");
+
+        if (tecla_apertada(ESC))
+            janela_deve_fechar();
+
     }
 
     fecha_janela();
