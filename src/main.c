@@ -15,6 +15,8 @@ int main() {
         fonte("assets/ubuntu.ttf", 32);
         desenha_texto(20, 20, "Esse é um teste!");
 
+        desenha_imagem(320, 240, "assets/guy.gif");
+
         if (tecla_apertada(ESC))
             janela_deve_fechar();
 
