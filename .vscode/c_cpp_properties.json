@@ -4,9 +4,10 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
+                "${workspaceFolder}/lib/jogo/include",
                 "${workspaceFolder}/lib/jogo/lib/glfw/include",
-                "${workspaceFolder}/lib/jogo/lib",
-                "${workspaceFolder}/lib/jogo/include"
+                "${workspaceFolder}/lib/jogo/lib/miniaudio",
+                "${workspaceFolder}/lib/jogo/lib"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/clang",
