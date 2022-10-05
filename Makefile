@@ -4,13 +4,9 @@ CFLAGS=-g
 JOGO_SRC=lib/jogo
 JOGO_LIB=$(JOGO_SRC)/libjogo.a
 
-GLFW_SRC=$(JOGO_SRC)/lib/glfw
-GLFW_BUILD_DIR=$(GLFW_SRC)/build
-GLFW_LIB=$(GLFW_BUILD_DIR)/src/libglfw3.a
-
-INCLUDE_DIRS=-I. -I$(JOGO_SRC)/include -I$(GLFW_SRC)/include
+INCLUDE_DIRS=-I. $(shell $(MAKE) --quiet -C $(JOGO_SRC) includes)
 LINK_DIRS=
-LINKS=-lGL -lGLEW -lm -ldl -pthread
+LINKS=$(shell $(MAKE) --quiet -C $(JOGO_SRC) links)
 DEFINE=
 
 SRC_DIR=src
@@ -29,7 +25,7 @@ $(OBJ_DIR):
 	mkdir -p $@
 
 $(EXE): $(OBJ_DIR) $(OBJ)
-	$(CC) $(CFLAGS) $(OBJ) $(JOGO_LIB) $(GLFW_LIB) -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
+	$(CC) $(CFLAGS) $(OBJ) $(JOGO_LIB) -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
 
 $(OBJ): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
