@@ -1,3 +1,6 @@
 [submodule "lib/jogo"]
 	path = lib/jogo
 	url = https://github.com/syndelis/jogo.h
+[submodule "utils"]
+	path = utils
+	url = https://github.com/syndelis/windows-makefile-utils

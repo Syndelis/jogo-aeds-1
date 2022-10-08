@@ -1,3 +1,11 @@
+ifeq ($(OS),Windows_NT)
+	MKDIR=powershell -file .\utils\mkdir.ps1 -dirs
+	RMRF=powershell -file .\utils\rm.ps1 -dirs
+else
+	MKDIR=mkdir -p
+	RMRF=rm -rf
+endif
+
 CC=gcc -std=c17
 CFLAGS=-g
 
@@ -22,7 +30,7 @@ $(JOGO_LIB):
 	$(MAKE) -C $(JOGO_SRC)
 
 $(OBJ_DIR):
-	mkdir -p $@
+	$(MKDIR) "$@"
 
 $(EXE): $(OBJ_DIR) $(OBJ)
 	$(CC) $(CFLAGS) $(OBJ) $(JOGO_LIB) -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
@@ -31,8 +39,8 @@ $(OBJ): $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 	$(CC) $(CFLAGS) -c $< -o $@ $(INCLUDE_DIRS) $(LINK_DIRS) $(LINKS) $(DEFINE)
 
 full-clean: clean
-	rm -rf $(JOGO_LIB)
+	$(RMRF) $(JOGO_LIB)
 	$(MAKE) -C $(JOGO_SRC) full-clean
 
 clean:
-	rm -rf $(OBJ_DIR) $(EXE)
+	$(RMRF) $(OBJ_DIR) $(EXE)
