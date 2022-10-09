@@ -54,9 +54,8 @@ nela com o seu terminal e rode os seguintes comandos para clonar este
 repositório:
 
 ```sh
-$ git clone https://github.com/syndelis/jogo-aeds-1 tp-aeds1
+$ git clone --recursive https://github.com/syndelis/jogo-aeds-1 tp-aeds1
 $ cd tp-aeds1
-$ git submodule update --init --recursive
 ```
 
 Esse comando criará uma pasta chamada **`tp-aeds1`** com todo o conteúdo deste
@@ -84,6 +83,15 @@ $ make
 
 ```pwsh
 PS> .\compilar.ps1
+```
+
+**⚠️ Atenção**: Pode ser que o comando acima falhe porque "a execução de
+scripts foi desabilitada neste sistema". Caso ocorra com você, abra um
+PowerShell como administrador e rode o seguinte comando
+**e reinicie seu computador**:
+
+```pwsh
+PS> Set-ExecutionPolicy Unrestricted
 ```
 
 </details>
