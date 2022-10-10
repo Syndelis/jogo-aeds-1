@@ -9,7 +9,7 @@
 #define ALTURA_JOGADOR 100
 
 #define VELOCIDADE_JOGADOR 5
-#define VELOCIDADE_BOLA 1
+#define VELOCIDADE_BOLA 4
 
 int placar_0 = 0, placar_1 = 0;
 int bola_x, bola_y, bola_dx, bola_dy;
@@ -48,8 +48,8 @@ void inicia_bola() {
 
 void processa_bola() {
 
-    bola_x += bola_dx;
-    bola_y += bola_dy;
+    bola_x += bola_dx * VELOCIDADE_BOLA;
+    bola_y += bola_dy * VELOCIDADE_BOLA;
 
     if (bola_y < 0 || bola_y > altura_janela) {
         bola_dy *= -1;
