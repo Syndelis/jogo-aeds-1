@@ -21,9 +21,24 @@ int main() {
         desenha_imagem(mouse_x, mouse_y, "assets/tux.png");
         reseta_zoom();
 
-        cor(VERMELHO);
         preenchimento(true);
+
+        cor(VERMELHO);
         desenha_circulo(200, 200, 10);
+
+        cor(VERDE);
+        desenha_circulo(220, 200, 20);
+
+        cor(50, 50, 255);
+        desenha_circulo(250, 200, 30);
+
+        cor(180, 20, 160, 127);
+        desenha_circulo(300, 200, 40);
+
+        // cor(100, 100); // <-- Erro de compilação! A função cor() só aceita 1, 3 ou 4 parâmetros!
+        // cor(100, 100, 100, 100, 100); // <-- Erro de compilação! A função cor() só aceita 1, 3 ou 4 parâmetros!
+
+        cor(BRANCO);
 
         fonte("assets/ubuntu.ttf", 32);
         desenha_texto(20, 20, "Esse é um teste!");
